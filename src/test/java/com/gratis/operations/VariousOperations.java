@@ -88,7 +88,7 @@ public class VariousOperations {
 
     private void writeDataToExistingExcel(String data) {
         try {
-            FileInputStream fis = new FileInputStream("src/test/java/com/gratis/excel/urun.xslx");
+            FileInputStream fis = new FileInputStream("src/test/java/com/gratis/urun.xslx");
             Workbook workbook = new HSSFWorkbook(fis);
 
             Sheet sheet = workbook.getSheet("urun");
@@ -104,7 +104,7 @@ public class VariousOperations {
 
             fis.close();
 
-            FileOutputStream fos = new FileOutputStream("src/test/java/com/gratis/excel/urun.xslx");
+            FileOutputStream fos = new FileOutputStream("src/test/java/com/gratis/urun.xslx");
             workbook.write(fos);
             fos.close();
 
@@ -132,7 +132,7 @@ public class VariousOperations {
         cell.setCellValue(text);
 
         // Excel dosyasýný kaydetme
-        FileOutputStream outputStream = new FileOutputStream("src/test/java/com/gratis/excel/urun.xslx");
+        FileOutputStream outputStream = new FileOutputStream("src/test/java/com/gratis/urun.xslx");
         workbook.write(outputStream);
         logger.info("{} excele kaydedildi.",key);
         workbook.close();
@@ -141,7 +141,7 @@ public class VariousOperations {
 
     public void readFromExcelAndWriteBoxes(String key1, String key2) throws IOException {
         // Excel dosyasýný okuma
-        FileInputStream inputStream = new FileInputStream("src/test/java/com/gratis/excel/urun.xslx");
+        FileInputStream inputStream = new FileInputStream("src/test/java/com/gratis/urun.xslx");
         Workbook workbook = new HSSFWorkbook(inputStream);
 
         // Sayfa seçme
